@@ -1,6 +1,7 @@
-var mongoose = require('mongoose')
-const HOST = "localhost"
-const uri = `mongodb://${HOST}:27017/nodejs-simple-restapi`
+const mongoose = require('mongoose')
+require('dotenv').config();
+
+const uri = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
 const options = {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}
 
 mongoose.connect(uri, options, (error, db) => {
