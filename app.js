@@ -1,12 +1,5 @@
-const express = require('express')
+var express = require('express');
+var app = express();
+var db = require('./db');
 
-const app = express()
-const port = 3000
-
-app.get('/', (req, res) => {
-  res.send('Thousand miles of journey starts with one step!')
-})
-
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`)
-})
+module.exports = app;
