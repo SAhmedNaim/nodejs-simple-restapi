@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 const HOST = "localhost"
 const uri = `mongodb://${HOST}:27017/nodejs-simple-restapi`
-const options = {useNewUrlParser: true, useUnifiedTopology: true}
+const options = {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}
 
 mongoose.connect(uri, options, (error, db) => {
     if (error) 
