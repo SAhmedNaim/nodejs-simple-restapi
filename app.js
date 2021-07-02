@@ -1,5 +1,12 @@
-var express = require('express');
-var app = express();
-var db = require('./db');
+const express = require('express');
+const app = express();
+const db = require('./db');
+const UserController = require('./user/UserController');
+
+app.get("/", (req, res) => {
+    res.send("Nodejs simple REST API");
+});
+
+app.use('/users', UserController);
 
 module.exports = app;
